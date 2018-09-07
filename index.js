@@ -6,7 +6,7 @@ const pdf = require('pdf-parse');
 
 console.log("here we go");
 
-let databuffer = fs.readFileSync('./test.pdf');
+let databuffer = fs.readFileSync('./testBlackIce.pdf');
 
 pdf(databuffer).then(data => {
   
@@ -23,6 +23,9 @@ pdf(databuffer).then(data => {
   // PDF text
   console.log('\ndata.text >', data.text);
   
+  // All of data...
+  console.log('\nata > ', data);
+/*  
   // DOB:
   let token = scanFields(data.text, 'DOB:', 'Age:');
   console.log("DOB: ", token.trim());
@@ -37,7 +40,7 @@ pdf(databuffer).then(data => {
   // provider
   token = scanFields(data.text, 'Provider:', 'Collected:');
   console.log("Provider: ", token.trim());
-  
+ */ 
 })
 .catch(err => {
   console.log("\nA colossal fuckup has occurrend!", err);
