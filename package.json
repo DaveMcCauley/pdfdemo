@@ -1,0 +1,14 @@
+{
+  "name": "pdfparse",
+  "version": "0.0.0",
+  "description": "pdf parser demo for Covington.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dave",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "pdf-parse": "^1.0.8"
+  }
+}
