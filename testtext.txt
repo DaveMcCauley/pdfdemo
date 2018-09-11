@@ -1,0 +1,10 @@
+This is another test document of the PDF parser
+DOB: 1/8/73
+Age: 29
+This is some other random data.
+Patient: Craven Moorehead
+PatientID: 2554658
+Home: This is the home address
+Provider: Dr. Lindley
+Collected: 12/10/2018
+THis is some other random data 

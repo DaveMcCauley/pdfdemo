@@ -2,11 +2,12 @@
 
 
 const fs = require('fs');
+// https://www.npmjs.com/package/pdf-parse
 const pdf = require('pdf-parse');
 
 console.log("here we go");
 
-let databuffer = fs.readFileSync('./testBlackIce.pdf');
+let databuffer = fs.readFileSync('./testtext.pdf');
 
 pdf(databuffer).then(data => {
   
@@ -24,23 +25,23 @@ pdf(databuffer).then(data => {
   console.log('\ndata.text >', data.text);
   
   // All of data...
-  console.log('\nata > ', data);
-/*  
+  // console.log('\ndata > ', data);
+  
   // DOB:
   let token = scanFields(data.text, 'DOB:', 'Age:');
-  console.log("DOB: ", token.trim());
+  console.log("\n\n=====================\nDOB: ", token.trim());
   
   // Patient name
-  token = scanFields(data.text, 'Patient:', 'Patient ID:');
+  token = scanFields(data.text, 'Patient:', 'PatientID:');
   console.log("Patient: ", token.trim());
  
   // Patient ID;
-  token = scanFields(data.text, 'Patient ID:', 'Home');
-  console.log("Patient ID: ", token.trim());
+  token = scanFields(data.text, 'PatientID:', 'Home');
+  console.log("PatientID: ", token.trim());
   // provider
   token = scanFields(data.text, 'Provider:', 'Collected:');
-  console.log("Provider: ", token.trim());
- */ 
+  console.log("Provider: ", token.trim(), "\n=====================\n\n\n");
+  
 })
 .catch(err => {
   console.log("\nA colossal fuckup has occurrend!", err);
@@ -76,7 +77,7 @@ function scanFields(text, startToken, endToken) {
   
   while(!found && i < textLen) {
     found = (text.substring(i, i + endTokenLen) === endToken);
-    // console.log("i >> ", i, "\tseg >>", text.substring(i, i + startTokenLen), "?", startToken, found ? "\tfound!" : "");
+    // console.log("i >> ", i, "\tseg >>", text.substring(i, i + endTokenLen), "?", endToken, found ? "\tfound!" : "");
     i++;
   }
   
